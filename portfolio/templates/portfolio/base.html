@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dmytro Duda</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static "portfolio/styles.css" %}"/> <link
+    rel="icon" type="image/png" href="{% static "portfolio/favicon.png" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="{% url 'home' %}"></use>
+          </svg>
+          <img src="{% static "portfolio/favicon.png" %}" width="30" height="30"
+          class="d-inline-block align-top me-3" alt="Dmytro's Logo" >
+          <span class="fs-4">Dmytro Duda</span>
+        </a>
+
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="{% static 'portfolio/resume.pdf' %}" class="nav-link"
+              >Resume</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://github.com/dmytrodudait"
+              class="nav-link"
+              target="_blank"
+              >Github</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://twitter.com/DmitrijDuda"
+              class="nav-link"
+              target="_blank"
+              >Twitter</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="{% url 'blog:all_blogs' %}"
+              class="nav-link active"
+              aria-current="page"
+              >Blog</a
+            >
+          </li>
+        </ul>
+      </header>
+    </div>
+    <div class="container">{% block content %}{% endblock content %}</div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <div class="container">
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+      >
+        <div class="col-md-4 d-flex align-items-center">
+          <a
+            href="/"
+            class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+          >
+            <svg class="bi" width="30" height="24">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">© 2022 Dmytro Duda</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
